@@ -11,6 +11,21 @@ public_folder: "img"
 
 collections: # A list of collections the CMS should be able to edit
   ###############################################################
+  - name: 'config'
+  label: 'Config'
+  editor:
+    preview: false
+  files:
+    - label: 'Navigation'
+      name: 'navigation'
+      file: 'site/data/data.yml'
+      fields:
+        - label: 'Navigation Items'
+          name: 'items'
+          widget: 'list'
+          fields:
+            - { label: Name, name: name, widget: string }
+            - { label: Link, name: link, widget: string }
   # - name: "data"
   #   label: "Data" # name on UI
   #   file: "site/data/data.json" # path to data file
