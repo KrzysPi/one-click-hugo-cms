@@ -16,15 +16,45 @@ collections: # A list of collections the CMS should be able to edit
       - { label: "Intro Blurb", name: "description", widget: "text" }
       - { label: "Image", name: "image", widget: "image", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
-###########################################################################3
-- name: "navigation"
-  label: "Navigation"
-  file: "site/data/data.yml"
-  fields:
-        - { label: Name, name: name, widget: string }
-        - { label: Link, name: link, widget: string }
-##############################################################################
+  ###########################################################################3
+  - label: Settings
+    name: settings
+    files:
+      - label: Docs Sections
+        name: docs_sections
+        file: website/site.yml
+        fields:
+          - label: menu
+            name: menu
+            widget: object
+            fields:
+              - label: Sections
+                label_singular: Section
+                name: docs
+                widget: list
+                summary: "{{title}} ({{name}})"
+                fields:
+                  - { label: "Full Name", name: "title", widget: "string" }
+                  - { label: "Summary Name", name: "name", widget: "string" }
 
+  # - name: "navigation"
+  #   label: "Navigation"
+  #   file: "site/data/data.yml"
+  #   fields:
+  #         - { label: Name, name: name, widget: string }
+  #         - { label: Link, name: link, widget: string }
+
+  # https://www.netlifycms.org/docs/collection-types/
+  # - label: "Data" # name on UI
+  #   name: "data"
+  #   files:
+  #     - label: "Colors"
+  #       name: "colors"
+  #       file: "data/data.json" # path to data file
+  #       fields: # The fields each document in this collection have
+  #         - { label: "Color", name: "color", widget: "string" }
+  #         - { label: "Value", name: "value", widget: "string" }
+  ##############################################################################
 
   - name: "pages"
     label: "Pages"
