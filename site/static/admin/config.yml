@@ -24,18 +24,14 @@ collections: # A list of collections the CMS should be able to edit
         name: docs_sections
         file: site/data/site.yml
         fields:
-          - label: menu
-            name: menu
-            widget: object
+          - label: Sections
+            label_singular: Section
+            name: docs
+            widget: list
+            summary: "{{title}} ({{name}})"
             fields:
-              - label: Sections
-                label_singular: Section
-                name: docs
-                widget: list
-                summary: "{{title}} ({{name}})"
-                fields:
-                  - { label: "Full Name", name: "title", widget: "string" }
-                  - { label: "Summary Name", name: "name", widget: "string" }
+              - { label: "Full Name", name: "title", widget: "string" }
+              - { label: "Summary Name", name: "name", widget: "string" }
 
   # - name: "navigation"
   #   label: "Navigation"
