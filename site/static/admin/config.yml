@@ -17,19 +17,19 @@ collections: # A list of collections the CMS should be able to edit
       - { label: "Image", name: "image", widget: "image", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
   ###########################################################################3
-  - label: Settings
+  - label: Settings # nazwa w side bar menu
     name: settings
     files:
-      - label: Docs Sections
+      - label: Docs Sections # nazwa konkretnego pliku z danymi
         name: docs_sections
-        file: site/data/site.yml
+        file: site/data/site.yml # ścieżka do pliku
         fields:
-          - label: Sections
-            label_singular: Section
+          - label: Sections # nazwa sekcji do wprowadzania elementów
+            label_singular: Section # jeżeli jest tylko 1 element
             name: docs
-            widget: list
-            summary: "{{title}} ({{name}})"
-            fields:
+            widget: list # przypisanie rodzaju widgeta który odpowiada za wyświetanie list
+            summary: "{{title}} **{{name}}**" # to wyświetli się jako zajawka elementu
+            fields: # definicja pól wprowadzanych przez urzytkownika
               - { label: "Full Name", name: "title", widget: "string" }
               - { label: "Summary Name", name: "name", widget: "string" }
 
