@@ -22,7 +22,7 @@ collections: # A list of collections the CMS should be able to edit
     files:
       - label: Docs Sections
         name: docs_sections
-        file: website/site.yml
+        file: site/data/site.yml
         fields:
           - label: menu
             name: menu
