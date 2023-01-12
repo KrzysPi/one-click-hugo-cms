@@ -16,7 +16,7 @@ collections: # A list of collections the CMS should be able to edit
   files:
     - label: 'Navigation'
       name: 'navigation'
-      file: 'site/data/data.yml'
+      file: 'site/data/data.json'
       fields:
         - label: 'Navigation Items'
           name: 'items'
