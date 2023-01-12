@@ -11,16 +11,16 @@ public_folder: "img"
 
 collections: # A list of collections the CMS should be able to edit
   ###############################################################
-  - name: "data"
-    label: "Data" # name on UI
-    file: "site/data/data.json" # path to data file
-    fields: # The fields each document in this collection have
-      - label: items
-        name: items
-        widget: list
-      fields:
-        - { label: "Color", name: "color", widget: "string" }
-        - { label: "Value", name: "value", widget: "string" }
+  # - name: "data"
+  #   label: "Data" # name on UI
+  #   file: "site/data/data.json" # path to data file
+  #   fields: # The fields each document in this collection have
+  #     - label: items
+  #       name: items
+  #       widget: list
+  #     fields:
+  #       - { label: "Color", name: "color", widget: "string" }
+  #       - { label: "Value", name: "value", widget: "string" }
 
   ################################################################
 
