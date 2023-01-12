@@ -2,41 +2,10 @@ backend:
   name: git-gateway
   branch: main
 
-################################### STAGEING #####################################
-publish_mode: editorial_workflow # Dodaje stageing dla postów (drafts, in review, Ready)
-##################################################################################
-
 media_folder: "site/static/img" # Folder where user uploaded files should go
 public_folder: "img"
 
 collections: # A list of collections the CMS should be able to edit
-  ###############################################################
-  - name: 'config'
-  label: 'Config'
-  files:
-    - label: 'Navigation'
-      name: 'navigation'
-      file: 'site/data/data.json'
-      fields:
-        - label: 'Navigation Items'
-          name: 'items'
-          widget: 'list'
-          fields:
-            - { label: Name, name: name, widget: string }
-            - { label: Link, name: link, widget: string }
-  # - name: "data"
-  #   label: "Data" # name on UI
-  #   file: "site/data/data.json" # path to data file
-  #   fields: # The fields each document in this collection have
-  #     - label: items
-  #       name: items
-  #       widget: list
-  #     fields:
-  #       - { label: "Color", name: "color", widget: "string" }
-  #       - { label: "Value", name: "value", widget: "string" }
-
-  ################################################################
-
   - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Post" # Used in the UI, ie.: "New Post"
     folder: "site/content/post" # The path to the folder where the documents are stored
