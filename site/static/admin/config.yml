@@ -17,16 +17,16 @@ collections: # A list of collections the CMS should be able to edit
       - { label: "Image", name: "image", widget: "image", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
 ###########################################################################3
-- name: 'config'
-  label: 'Config'
+- name: "config"
+  label: "Config"
   files:
-    - label: 'Navigation'
-      name: 'navigation'
-      file: 'site/data/data.yml'
+    - label: "Navigation"
+      name: "navigation"
+      file: "site/data/data.yml"
       fields:
-        - label: 'Navigation Items'
-          name: 'items'
-          widget: 'list'
+        - label: "Navigation Items"
+          name: "items"
+          widget: "list"
           fields:
             - { label: Name, name: name, widget: string }
             - { label: Link, name: link, widget: string }
