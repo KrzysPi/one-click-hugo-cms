@@ -4,7 +4,7 @@
   <body class="sans-serif">
     {{ block "header" . }}{{ partial "nav" . }}{{end}} {{ block "main" . }}{{
     end }} {{range .Site.Data.data}}
-    <div>{{.name}} - {{.link}}</div>
+    <div>{{.items.name}} - {{.items.link}}</div>
     {{end}} {{ block "footer" . }}{{ partial "footer" . }}{{end}} {{ $script :=
     .Site.Data.webpack.main }} {{ with $script.js }}
     <script src="{{ relURL . }}"></script>
