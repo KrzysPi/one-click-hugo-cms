@@ -13,8 +13,6 @@ collections: # A list of collections the CMS should be able to edit
   ###############################################################
   - name: 'config'
   label: 'Config'
-  editor:
-    preview: false
   files:
     - label: 'Navigation'
       name: 'navigation'
