@@ -5,11 +5,12 @@ backend:
 media_folder: "site/static/img" # Folder where user uploaded files should go
 public_folder: "img"
 
-############################# Stageing ###################################################
+######################################### Stageing #######################################
 publish_mode: editorial_workflow # Dodaje stageing dla postów (drafts, in review, Ready)
-#########################################################################################
+##########################################################################################
 
-collections: # A list of collections the CMS should be able to edit https://www.netlifycms.org/docs/collection-types/
+collections: # Lista kolekcji które będą mogły być edytowane w CME (https://www.netlifycms.org/docs/collection-types/)
+  ########################## UI definition for folder with blog posts #######################
   - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Post" # Used in the UI, ie.: "New Post"
     folder: "site/content/post" # The path to the folder where the documents are stored
@@ -21,8 +22,8 @@ collections: # A list of collections the CMS should be able to edit https://www.
       - { label: "Image", name: "image", widget: "image", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
-  #################################### Data file eddition #######################################
-  ########### Represent the schema from data file in this case "site/data/site.json" ############
+  ################################## Data file eddition ###################################
+  ######## Represent the schema from data file in this case "site/data/site.json" #########
   - label: Data Files # nazwa w side bar menu
     name: data
     files:
@@ -34,12 +35,13 @@ collections: # A list of collections the CMS should be able to edit https://www.
             label_singular: Section # jeżeli jest tylko 1 element
             name: docs
             widget: list # przypisanie rodzaju widgeta który odpowiada za wyświetanie list (konieczne jeżli mamy >1 input) https://www.netlifycms.org/docs/widgets/#list
-            summary: "{{title}} {{name}}" # to wyświetli się w liście jako zajawka inputu
+            summary: "{{name}}" # to wyświetli się w liście jako zajawka inputu
             fields: # definicja pól wprowadzanych przez urzytkownika
               - { label: "Full Name", name: "title", widget: "string" }
               - { label: "Summary Name", name: "name", widget: "string" }
+  #########################################################################################
 
-  ###############################################################################################
+  ################################ UI for 4 different pages ###############################
 
   - name: "pages"
     label: "Pages"
