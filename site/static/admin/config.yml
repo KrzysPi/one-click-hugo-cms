@@ -5,7 +5,11 @@ backend:
 media_folder: "site/static/img" # Folder where user uploaded files should go
 public_folder: "img"
 
-collections: # A list of collections the CMS should be able to edit
+############################# Stageing ###################################################
+publish_mode: editorial_workflow # Dodaje stageing dla postów (drafts, in review, Ready)
+#########################################################################################
+
+collections: # A list of collections the CMS should be able to edit https://www.netlifycms.org/docs/collection-types/
   - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Post" # Used in the UI, ie.: "New Post"
     folder: "site/content/post" # The path to the folder where the documents are stored
@@ -16,7 +20,9 @@ collections: # A list of collections the CMS should be able to edit
       - { label: "Intro Blurb", name: "description", widget: "text" }
       - { label: "Image", name: "image", widget: "image", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
-  ###########################################################################3
+
+  #################################### Data file eddition #######################################
+  ########### Represent the schema from data file in this case "site/data/site.json" ############
   - label: Data Files # nazwa w side bar menu
     name: data
     files:
@@ -27,30 +33,13 @@ collections: # A list of collections the CMS should be able to edit
           - label: Inputs # nazwa sekcji do wprowadzania elementów
             label_singular: Section # jeżeli jest tylko 1 element
             name: docs
-            widget: list # przypisanie rodzaju widgeta który odpowiada za wyświetanie list (konieczne jeżli mamy >1 input)
+            widget: list # przypisanie rodzaju widgeta który odpowiada za wyświetanie list (konieczne jeżli mamy >1 input) https://www.netlifycms.org/docs/widgets/#list
             summary: "{{title}} {{name}}" # to wyświetli się w liście jako zajawka inputu
             fields: # definicja pól wprowadzanych przez urzytkownika
               - { label: "Full Name", name: "title", widget: "string" }
               - { label: "Summary Name", name: "name", widget: "string" }
 
-  # - name: "navigation"
-  #   label: "Navigation"
-  #   file: "site/data/data.yml"
-  #   fields:
-  #         - { label: Name, name: name, widget: string }
-  #         - { label: Link, name: link, widget: string }
-
-  # https://www.netlifycms.org/docs/collection-types/
-  # - label: "Data" # name on UI
-  #   name: "data"
-  #   files:
-  #     - label: "Colors"
-  #       name: "colors"
-  #       file: "data/data.json" # path to data file
-  #       fields: # The fields each document in this collection have
-  #         - { label: "Color", name: "color", widget: "string" }
-  #         - { label: "Value", name: "value", widget: "string" }
-  ##############################################################################
+  ###############################################################################################
 
   - name: "pages"
     label: "Pages"
