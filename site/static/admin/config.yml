@@ -27,8 +27,8 @@ collections: # A list of collections the CMS should be able to edit
           - label: Inputs # nazwa sekcji do wprowadzania elementów
             label_singular: Section # jeżeli jest tylko 1 element
             name: docs
-            widget: list # przypisanie rodzaju widgeta który odpowiada za wyświetanie list
-            summary: "{{title}} **{{name}}**" # to wyświetli się jako zajawka elementu
+            widget: list # przypisanie rodzaju widgeta który odpowiada za wyświetanie list (konieczne jeżli mamy >1 input)
+            summary: "{{title}} {{name}}" # to wyświetli się w liście jako zajawka inputu
             fields: # definicja pól wprowadzanych przez urzytkownika
               - { label: "Full Name", name: "title", widget: "string" }
               - { label: "Summary Name", name: "name", widget: "string" }
